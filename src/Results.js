@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import Meaning from "./Meaning";
+import WordCard from "./components/WordCard/WordCard";
 import Phonetics from "./Phonetics";
 
 const Results = ({ results }) => {
@@ -12,16 +12,29 @@ const Results = ({ results }) => {
   });
   if (results) {
     return (
-      <div className="Results">
+      <div class="container">
         <h2>{results.word}</h2>
-
         <Phonetics phonetic={checkIfAudio(results.phonetics)} />
-
-        {results.meanings.map((meaning, index) => (
-          <p key={index}>
-            <Meaning meaning={meaning} />
-          </p>
-        ))}
+        <div className="Results">
+          {results.meanings.map((meaning, index) => (
+            <WordCard
+              key={index}
+              number={index + 1}
+              header={meaning.partOfSpeech}
+              subtitle={
+                meaning.definitions[index]
+                  ? meaning.definitions[index].definition
+                  : "None"
+              }
+              example={
+                meaning.definitions[index]
+                  ? meaning.definitions[index].example
+                  : "None"
+              }
+              synonyms={meaning.synonyms}
+            />
+          ))}
+        </div>
       </div>
     );
   } else {
