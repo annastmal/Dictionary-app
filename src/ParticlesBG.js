@@ -50,7 +50,7 @@ const ParticlesBG = () => {
       },
       move: {
         enable: true,
-        speed: 2,
+        speed: 3,
         direction: "none",
         random: false,
         straight: false,
@@ -87,7 +87,6 @@ const ParticlesBG = () => {
     },
   };
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
 
