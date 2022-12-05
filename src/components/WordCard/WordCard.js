@@ -2,25 +2,29 @@ import "./styles.css";
 import React from "react";
 
 const WordCard = ({ header, subtitle = "None", synonyms, example, number }) => {
-  console.log(synonyms);
   return (
     <div className="card">
-      <h4>{header}</h4>
-      <div>{number + ". " + subtitle}</div>
+      {header && <h4 className="header">{header}</h4>}
+      {subtitle && <div className="definition">{number + ". " + subtitle}</div>}
+      <br />
       <div>
         {example && (
-        <span>
-        Example: <span className="example">{example}</span>
-        </span>
+          <span className="example">
+            <strong>Example:</strong> <span>{example}</span>
+          </span>
         )}
-        </div>
+      </div>
       <div>
         {synonyms.length != 0 && (
-          <span>
-            Synonyms:{" "}
+          <span className="synonyms">
+            <strong>Synonyms:</strong>{" "}
             {synonyms.map((synonym, index) => {
-              if (index < 5 ) {
-                return <span className="synonyms">{synonym}, </span>;
+              if (index === synonyms.length) {
+                return <span>{synonym}. </span>;
+              } else if (index === 6) {
+                return <span>{synonym}. </span>;
+              }else if (index < 6) {
+                return <span>{synonym}, </span>;
               }
             })}
           </span>

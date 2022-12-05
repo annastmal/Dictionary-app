@@ -13,27 +13,37 @@ const Results = ({ results }) => {
   if (results) {
     return (
       <div class="container">
-        <h2>{results.word}</h2>
+        <h2 className="result_word">{results.word}</h2>
         <Phonetics phonetic={checkIfAudio(results.phonetics)} />
         <div className="Results">
-          {results.meanings.map((meaning, index) => (
-            <WordCard
-              key={index}
-              number={index + 1}
-              header={meaning.partOfSpeech}
-              subtitle={
-                meaning.definitions[index]
-                  ? meaning.definitions[index].definition
-                  : "None"
+          {results.meanings.map((meaning, index) => {
+            console.log(meaning);
+            {
+              if (
+                meaning.definitions[0] !== null &&
+                meaning.partOfSpeech !== null
+              ) {
+                return (
+                  <WordCard
+                    key={index}
+                    number={index + 1}
+                    header={meaning.partOfSpeech}
+                    subtitle={
+                      meaning.definitions[0]
+                        ? meaning.definitions[0].definition
+                        : null
+                    }
+                    example={
+                      meaning.definitions[0]
+                        ? meaning.definitions[0].example
+                        : null
+                    }
+                    synonyms={meaning.synonyms}
+                  />
+                );
               }
-              example={
-                meaning.definitions[index]
-                  ? meaning.definitions[index].example
-                  : "None"
-              }
-              synonyms={meaning.synonyms}
-            />
-          ))}
+            }
+          })}
         </div>
       </div>
     );

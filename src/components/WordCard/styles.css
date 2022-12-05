@@ -4,7 +4,6 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 0.5px;
   border-radius: 6%;
   border-color: grey;
@@ -13,18 +12,32 @@
   height: 300px;
   padding: 20px;
   margin: 10px;
-  color: white;
-  background-color: rgb(191, 176, 192);
+  color: rgb(64, 64, 64);
+  background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
     rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
-
-.synonyms {
-  font-family: cursive;
-  font-size: 15px;
-  
+.result_word {
+text-transform: capitalize;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+text-shadow: 3px 3px #969696;
+font-size: 250%;
+opacity: 0.7;
+margin-top: 20px;
+}
+.definition{
+  font-family: Garamond;
+}
+.header {
+  text-align: center;
+  font-size: 18px;
 }
 .example{
-  font-family: cursive;
+  font-family: cursive !important;
   font-size: 15px;
+}
+.synonyms {
+  font-family: cursive !important;
+  font-size: 15px;
+
 }
