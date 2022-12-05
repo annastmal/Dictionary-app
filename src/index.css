@@ -52,8 +52,6 @@ body {
   color: rgb(173, 172, 172);
 }
 
-.btn-search:hover {
-}
 
 .btn-search:focus ~ .input-search {
   width: 300px;

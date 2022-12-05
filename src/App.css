@@ -26,7 +26,33 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   position: relative;
   background-color: #EFEEEE;
+}
+.footer{
+  position: absolute;
+  background-color: rgba(247, 247, 247, 0.013);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 40px !important;
+  padding: 8px;
+  text-align: center;
+  color: rgba(134, 134, 134, 0.591);
+  font-size: 14px;
+}
+.footer_text{
+  color: rgba(134, 134, 134, 0.591);
+}
+.footer_text:hover{
+  color: gray;
+}
+.App {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
