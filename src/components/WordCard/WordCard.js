@@ -15,7 +15,7 @@ const WordCard = ({ header, subtitle = "None", synonyms, example, number }) => {
         )}
       </div>
       <div>
-        {synonyms.length != 0 && (
+        {synonyms.length !== 0 && (
           <span className="synonyms">
             <strong>Synonyms:</strong>{" "}
             {synonyms.map((synonym, index) => {
@@ -23,8 +23,10 @@ const WordCard = ({ header, subtitle = "None", synonyms, example, number }) => {
                 return <span>{synonym}. </span>;
               } else if (index === 6) {
                 return <span>{synonym}. </span>;
-              }else if (index < 6) {
+              } else if (index < 6) {
                 return <span>{synonym}, </span>;
+              } else {
+                return null;
               }
             })}
           </span>

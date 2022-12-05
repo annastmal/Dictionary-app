@@ -41,6 +41,8 @@ const Results = ({ results }) => {
                     synonyms={meaning.synonyms}
                   />
                 );
+              } else {
+                return null;
               }
             }
           })}
